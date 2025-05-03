@@ -1,0 +1,338 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: hsl(248, 90%, 42%);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #333;
+  }
+  
+  .book-image-container {
+    margin-top: 20px;
+  }
+  
+  .book-image {
+    width: 120px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hsk-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    padding: 30px 15px;
+  }
+  
+  .hsk-btn-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hsk-btn {
+    background: linear-gradient(to bottom right, #ffffff, #eaf7ff);
+    border: 2px solid #ccc;
+    border-radius: 16px;
+    width: 160px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hsk-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+  }
+  
+  .book-icon {
+    width: 90px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+  }
+  
+  .hsk-label {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .study-btn {
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .study-btn:hover {
+    background-color: #388E3C;
+  }
+  
+  #vocab-section {
+    padding: 20px;
+    background-color: #ffffff;
+    margin-top: 30px;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  #vocab-header {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .vocab-display {
+    max-width: 800px;
+    margin: auto;
+    text-align: left;
+  }
+  
+  .vocab-item {
+    background-color: #f9f9f9;
+    padding: 16px;
+    margin-bottom: 12px;
+    border-left: 4px solid #4CAF50;
+    border-radius: 8px;
+  }
+  
+  .vocab-item h3 {
+    margin: 0 0 8px 0;
+    color: #222;
+  }
+  
+  .vocab-item p {
+    margin: 4px 0;
+    line-height: 1.4;
+  }
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eedcdc;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 100;
+  }
+  
+  .navbar-logo {
+    padding: 12px;
+    background-color: #111;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .main-logo {
+    height: 70px;
+    border-radius: 50%;
+  }
+  
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: hsl(120, 7%, 97%);
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li a {
+    display: block;
+    padding: 14px 18px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    color:hsl(240, 25%, 98%);
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    background-color: #c5132f;
+  }
+
+
+  
+  .main-logo {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .site-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f2eaea;
+  }
+  .navbar-top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* ប្ដូរពី center ទៅ flex-start */
+    gap: 12px;
+    padding: 0 20px;
+    background-color: #0e0606;
+    border-bottom: 2px solid #f71c3c;
+    width: 100%;
+    height: 80px;
+    color: #fff;
+  }
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px); /* ញ័រឡើងខ្ពស់បន្តិច */
+    }
+  }
+  
+  .book-icon {
+    width: 100px;       /* ធំជាងមុន */
+    height: auto;
+    border-radius: 20px;
+    animation: bounce 2.10s ease-in-out infinite;
+  }
+  @keyframes glowMove {
+    0% {
+      text-shadow: 0 0 5px #fff, 0 0 10px #1c39f7, 0 0 15px #3a11ac;
+      transform: scale(1);
+    }
+    50% {
+      text-shadow: 0 0 10px #fff, 0 0 20px #1c39f7, 0 0 25px #2e1cf7;
+      transform: scale(1.05);
+    }
+    100% {
+      text-shadow: 0 0 5px #fff, 0 0 10px #1c39f7, 0 0 15px #2b1cf7;
+      transform: scale(1);
+    }
+  }
+  
+  .glow-animate {
+    animation: glowMove 1s ease-in-out infinite;
+    display: inline-block;
+  }
+
+  @keyframes slideLeftRight {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(40px); /* ចម្លងទៅស្ដាំ */
+    }
+    100% {
+      transform: translateX(0); /* ត្រឡប់មកវិញ */
+    }
+  }
+  
+  .slide-left-right {
+    animation: slideLeftRight 3s ease-in-out infinite;
+  }
+  .slide-left-right {
+    position: relative;
+    animation: slideLR 3s ease-in-out infinite alternate;
+    width: 120px; /* បង្កើនទំហំពី 80px ទៅ 120px */
+    height: auto;
+  }
+  
+  @keyframes slideLR {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: 100px; /* រត់ចេញឆ្វេងទៅស្ដាំ */
+    }
+    
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Style for navigation bar */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    background-color: #333; /* Background color */
+    border-radius: 5px;
+  }
+  
+  .nav-links li {
+    padding: 10px 20px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s, box-shadow 0.3s ease-in-out;
+  }
+  
+  .nav-links a i {
+    margin-right: 8px;
+  }
+  
+  /* Glow effect and hover animation */
+  .nav-links a:hover {
+    color: #f7d700; /* Change text color to yellow when hovered */
+    box-shadow: 0 0 10px 2px #f7d700; /* Glowing effect */
+    transition: color 0.3s, box-shadow 0.3s ease-in-out;
+  }
+  
+  /* Make the active link stand out (optional) */
+  .nav-links a.active {
+    color: #ff4500; /* Active link color */
+    font-weight: bold;
+  }
+  
+  /* Optional: Style the icon */
+  .nav-links a i {
+    font-size: 22px;
+  }
+  
+  /* Optional: Add a transition to the list items for smooth hover effect */
+  .nav-links li {
+    transition: transform 0.3s;
+  }
+  
+  .nav-links li:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+  }
+  
