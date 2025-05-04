@@ -5,57 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HSK Academy</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+    <!-- Navbar -->
     <div class="navbar">
-        <!-- Logo និង Title ដាក់នៅលើ nav-links -->
         <div class="navbar-top">
-          <img src="/LOGO.jpg" alt="HSK Logo" class="logo" />
-          <span class="site-title glow-animate">姓名：柯权 （KHIT SEK）</span>
-          <img src="/Book1.png" alt="Book" class="book-icon" /> 
+            <img src="/LOGO.jpg" alt="HSK Logo" class="logo" />
+            <span class="site-title glow-animate">姓名：柯权 （KHIT SEK）</span>
+            <img src="/Book1.png" alt="Book" class="book-icon" />
         </div>
-        <!-- Navigation Menu -->
         <ul class="nav-links">
-            <li><a href="#"><i class="fa fa-home"></i></a></li>
-            <li><a href="#">HSK1</a></li>
-            <li><a href="#">HSK2</a></li>
-            <li><a href="#">HSK3</a></li>
-            <li><a href="#">HSK4</a></li>
-            <li><a href="#">HSK5</a></li>
-            <li><a href="#">HSK6</a></li>
-            <li><a href="#">HSK7</a></li>
-            <li><a href="#">HSK8</a></li>
-          </ul>
-      </div>  
-    <!-- Book Image -->
-    <div class="book-image-container">
-        <img src="/Book.png" alt="HSK Book" class="book-image slide-left-right" />
+            <li><a href="#"><h1>Welcom to HSK(vocabulary)</h1>
+              <img src="/Pic.png" alt="HSK logo" class="nav-image">
+            </a></li>
+        </ul>
     </div>
-
+    
+    <!-- HSK Buttons -->
     <div class="hsk-container">
         <div class="hsk-btn-wrapper">
             <button class="hsk-btn" data-level="1">
-              <img src="/HSK1.png" alt="HSK Book" class="book-icon" />
-              <span class="hsk-label">HSK 1</span>
+                <img src="/HSK1.png" alt="HSK Book" class="book-icon" />
+                <span class="hsk-label">HSK 1</span>
             </button>
             <button class="study-btn" data-level="1">Free Study</button>
-          </div>
+        </div>
         <div class="hsk-btn-wrapper">
             <button class="hsk-btn" data-level="2">
                 <img src="/HSK2.png" alt="HSK Book" class="book-icon" />
-              <span class="hsk-label">HSK 2</span>
+                <span class="hsk-label">HSK 2</span>
             </button>
             <button class="study-btn" data-level="1">Free Study</button>
-          </div>
+        </div>
         <div class="hsk-btn-wrapper">
-        <button class="hsk-btn" data-level="3">
-            <img src="/HSK3.png" alt="HSK Book" class="book-icon" />
-            <span class="hsk-label">HSK 3</span>
+            <button class="hsk-btn" data-level="3">
+                <img src="/HSK3.png" alt="HSK Book" class="book-icon" />
+                <span class="hsk-label">HSK 3</span>
             </button>
             <button class="study-btn" data-level="1">Free Study</button>
-        </button>
         </div>
         <div class="hsk-btn-wrapper">
             <button class="hsk-btn" data-level="4">
@@ -65,36 +53,46 @@
             <button class="study-btn" data-level="1">Free Study</button>
         </div>
         <div class="hsk-btn-wrapper">
-        <button class="hsk-btn" data-level="5">
-            <img src="/HSK5.png" alt="HSK Book" class="book-icon" />
-            <span class="hsk-label">HSK 5</span>
-        </button>
-        <button class="study-btn" data-level="1">Free Study</button>
-       </div>
-       <div class="hsk-btn-wrapper">
-        <button class="hsk-btn" data-level="6">
-            <img src="/HSK6.png" alt="HSK Book" class="book-icon" />
-            <span class="hsk-label">HSK 6</span>
-        </button>
-        <button class="study-btn" data-level="1">Free Study</button>
+            <button class="hsk-btn" data-level="5">
+                <img src="/HSK5.png" alt="HSK Book" class="book-icon" />
+                <span class="hsk-label">HSK 5</span>
+            </button>
+            <button class="study-btn" data-level="1">Free Study</button>
         </div>
         <div class="hsk-btn-wrapper">
-        <button class="hsk-btn" data-level="7">
-            <img src="/HSK7.png" alt="HSK Book" class="book-icon" />
-            <span class="hsk-label">HSK 7</span>
-        </button>
-        <button class="study-btn" data-level="1">Free Study</button>
+            <button class="hsk-btn" data-level="6">
+                <img src="/HSK6.png" alt="HSK Book" class="book-icon" />
+                <span class="hsk-label">HSK 6</span>
+            </button>
+            <button class="study-btn" data-level="1">Free Study</button>
         </div>
         <div class="hsk-btn-wrapper">
-        <button class="hsk-btn" data-level="8">
-            <img src="/HSK8.png" alt="HSK Book" class="book-icon" />
-            <span class="hsk-label">HSK 8</span>
-        </button>
-        <button class="study-btn" data-level="1">Free Study</button>
+            <button class="hsk-btn" data-level="7">
+                <img src="/HSK7.png" alt="HSK Book" class="book-icon" />
+                <span class="hsk-label">HSK 7</span>
+            </button>
+            <button class="study-btn" data-level="1">Free Study</button>
         </div>
-
-    <div id="vocab-display" class="vocab-display"></div>
-
+        <div class="hsk-btn-wrapper">
+            <button class="hsk-btn" data-level="8">
+                <img src="/HSK8.png" alt="HSK Book" class="book-icon" />
+                <span class="hsk-label">HSK 8</span>
+            </button>
+            <button class="study-btn" data-level="1">Free Study</button>
+        </div>
+    </div>
+    <div class="social-links">
+      <a href="https://www.facebook.com/people/%E5%AD%A6%E4%B9%A0%E6%B1%89%E8%AF%AD/100091265884965/" target="_blank" class="social-btn facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://youtube.com/channel/UCQOgokooHiPzO3h3oa3AT0w?si=1XEo_vLLRQsb06n7" target="_blank" class="social-btn youtube"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/learningchinese_everyday/" target="_blank" class="social-btn instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://t.me/learningchinese168" target="_blank" class="social-btn telegram"><i class="fab fa-telegram-plane"></i></a>
+      <a href="https://www.pinterest.com/khit3095/" target="_blank" class="social-btn pinterest"><i class="fab fa-pinterest-p"></i></a>
+    </div>
+  <!-- Vocabulary Section -->
+  <div id="vocab-section">
+      <h2 id="vocab-header">Vocabulary</h2>
+      <div id="vocab-display" class="vocab-display"></div>
+  </div>
     <script src="script.js"></script>
 </body>
 </html>
