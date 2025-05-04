@@ -1,199 +1,360 @@
-/* General */
+/* Base Styles */
 body {
   font-family: 'Segoe UI', sans-serif;
   background: hsl(231, 100%, 64%);
   margin: 0;
   padding: 0;
   text-align: center;
-  font-size: 16px; /* Root size */
+  font-size: 16px;
+  animation: bodyFadeIn 1s ease-in;
 }
 html {
   scroll-behavior: smooth;
 }
 
-/* Header / Navbar */
-.navbar {
-  display: flex;
-  flex-direction: column;
-  background-color: #eedcdc;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+/* Animations */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
-.navbar-top {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 0 20px;
-  background-color: #000;
-  border-bottom: 2px solid #f71c3c;
-  height: 80px;
-  color: #fff;
+
+@keyframes glow {
+  0%, 100% { text-shadow: 0 0 5px #fff, 0 0 10px #00f; }
+  50% { text-shadow: 0 0 15px #0ff, 0 0 25px #0ff; }
+}
+
+@keyframes bodyFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .logo {
-  width: 70px; /* Adjust width as needed */
-  height: 70px; /* Adjust height as needed */
-  border-radius: 50%; /* Make it round if you prefer */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Initial glow effect */
-  transition: box-shadow 0.3s ease-in-out;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .logo:hover {
-  /* Increase the glow effect on hover */
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 0, 0, 0.6); /* Neon glow */
-}
-@keyframes neonPulse {
-  0% {
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 0, 0, 0.6); /* Initial glow */
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 0, 0, 1); /* Glowing and stronger */
-  }
-  100% {
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 0, 0, 0.6); /* Return to initial glow */
-  }
+  transform: scale(1.1) rotate(3deg);
+  filter: brightness(1.2) drop-shadow(0 0 6px #ffffffaa);
+  cursor: pointer;
 }
 .site-title {
-  font-size: 24px;
+  font-size: 32px;
+  color: white;
   font-weight: bold;
-  color: #fff;
+  animation: glow 1s ease-in-out infinite;
 }
-.nav-links {
+
+.book-icon {
+  width: 150px;
+  height: auto;
+  animation: fall 7s ease-in-out infinite;
+}
+
+/* ចលនាធ្លាក់ចុះទៅវិញទៅមក */
+@keyframes fall {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  75% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+
+.navbar-top {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 20px;
   flex-wrap: wrap;
-  background-color: #333;
+  padding: 20px;
+  background-color: #001f4d;
+}
+.nav-links {
+  list-style: none;
   padding: 0;
   margin: 0;
-  list-style: none;
 }
 
 .nav-links li {
-  margin: 0;
-}
-.nav-links a:hover {
-  color: #f7d700;
-  box-shadow: 0 0 12px 2px #f7d700;
-  border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.1); /* Optional soft highlight */
-}
-.nav-links a {
-  font-size: 1.25rem; /* = 20px */
-  padding: 1rem 1.5rem;
-}
-.nav-links a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(0.5rem, 2vw, 1rem) clamp(1rem, 3vw, 1.5rem);
-  font-size: clamp(14px, 2.5vw, 20px); /* min: 14px, preferred: 2.5vw, max: 20px */
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  transition: color 0.3s, box-shadow 0.3s;
+  margin: 10px 0;
 }
+
 .nav-links a {
-  display: flex;
-  flex-direction: column; /* Make the text and image stack vertically */
-  align-items: center; /* Center the content */
-  justify-content: center;
-  padding: 14px 20px;
-  text-decoration: none;
   color: white;
-  font-size: 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 30px; /* Increase the font size */
+  justify-content: center;
+}
+
+.nav-image {
+  width: 80px; /* Increased image size */
+  height: auto;
+  margin: 0 15px; /* Increase spacing between images and text */
+  animation: fall 7s ease-in-out infinite; /* Apply the continuous falling effect */
+}
+
+.left-image {
+  order: -1; /* Moves the left image to the left side */
+}
+
+.right-image {
+  order: 1; /* Keeps the right image on the right side */
+}
+
+.nav-links h1 {
+  margin: 0;
+  font-size: 36px; /* Increase the size of the heading */
   font-weight: bold;
-  transition: color 0.3s, box-shadow 0.3s;
+  letter-spacing: 2px; /* Add space between letters */
+  animation: fall-text 6s ease-in-out infinite; /* Apply the continuous falling effect */
 }
 
-.nav-links a .nav-image {
-  width: 100px; /* You can adjust the size as needed */
-  height: auto;
-  margin-top: 10px; /* Space between the text and the image */
-}
-/* Animation */
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-@keyframes glowMove {
-  0% { text-shadow: 0 0 5px #fff, 0 0 10px #1c39f7; transform: scale(1); }
-  50% { text-shadow: 0 0 20px #1c39f7; transform: scale(1.05); }
-  100% { text-shadow: 0 0 5px #1c39f7; transform: scale(1); }
-}
-@keyframes slideLR {
-  0% { transform: translateX(0); }
-  50% { transform: translateX(40px); }
-  100% { transform: translateX(0); }
-}
-.glow-animate {
-  animation: glowMove 1s infinite ease-in-out;
-}
-.slide-left-right {
-  animation: slideLR 3s infinite ease-in-out;
+/* Continuous Falling and Returning animation for images */
+@keyframes fall {
+  0% {
+    transform: translateY(0); /* Starting position */
+  }
+  25% {
+    transform: translateY(15px); /* Move slightly down */
+  }
+  50% {
+    transform: translateY(30px); /* Fall further down */
+  }
+  75% {
+    transform: translateY(15px); /* Move slightly up */
+  }
+  100% {
+    transform: translateY(0); /* Return to original position */
+  }
 }
 
-/* Main Book Image */
-.book-image-container {
-  margin-top: 20px;
+/* Continuous Falling and Returning animation for text */
+@keyframes fall-text {
+  0% {
+    transform: translateY(0); /* Starting position */
+  }
+  25% {
+    transform: translateY(15px); /* Move slightly down */
+  }
+  50% {
+    transform: translateY(30px); /* Fall further down */
+  }
+  75% {
+    transform: translateY(15px); /* Move slightly up */
+  }
+  100% {
+    transform: translateY(0); /* Return to original position */
+  }
 }
-.book-image {
-  width: 200px;
-  height: auto;
-}
-.book-icon {
-  width: 100px;
-  border-radius: 20px;
-  margin-bottom: 12px;
-  animation: bounce 2.1s infinite ease-in-out;
-}
+
+
+
+
+
+
+
 .hsk-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  padding: 30px;
-  max-width: 1000px;
-  margin: 0 auto;
+  padding: 20px;
 }
 
 .hsk-btn-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.hsk-btn, .study-btn {
-  margin: 5px 0;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border: none;
-  border-radius: 8px;
-  background-color: #4CAF50;
-  color: white;
-  transition: background-color 0.3s;
-}
-
-.hsk-btn:hover, .study-btn:hover {
-  background-color: #45a049;
-}
-
-/* Hover effect for the book icon inside the button */
-.hsk-btn:hover .book-icon {
-  transform: scale(1.1); /* Slightly enlarge the image */
-  transition: transform 0.3s ease-in-out;
-}
-
-.book-icon {
-  width: 100px;
-  height: auto;
-  margin-bottom: 5px;
+  background: #ffffffaa;
+  padding: 10px;
+  border-radius: 12px;
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
 }
 
 .hsk-label {
-  margin-top: 5px;
+  display: block;
+  margin-top: 8px;
   font-weight: bold;
 }
+
+.hsk-btn,
+.study-btn {
+  padding: 8px 12px;
+  margin-top: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.hsk-btn:hover,
+.study-btn:hover {
+  transform: scale(1.05);
+}
+
+.study-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.social-links {
+  margin: 20px 0;
+}
+
+.social-btn {
+  margin: 5px;
+  font-size: 24px;
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.social-btn:hover {
+  transform: scale(1.1);
+}
+
+.vocab-display {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .hsk-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .vocab-display {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .site-title {
+    font-size: 20px;
+  }
+
+  .nav-image {
+    width: 60px;
+  }
+
+  .book-icon {
+    width: 70px;
+  }
+
+  .hsk-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .vocab-display {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .social-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 60px;
+  }
+
+  .site-title {
+    font-size: 18px;
+  }
+
+  .nav-image {
+    width: 50px;
+  }
+
+  .book-icon {
+    width: 60px;
+  }
+
+  .hsk-btn,
+  .study-btn {
+    font-size: 14px;
+  }
+}
+
+
+
+/* Hover Effects */
+.hsk-btn:hover,
+.study-btn:hover {
+  transform: scale(1.05);
+  background-color: #0056b3;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links a:hover {
+  color: #00ffff;
+  text-decoration: underline;
+}
+
+.social-btn:hover {
+  transform: scale(1.1);
+  background-color: #555;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.site-title:hover {
+  animation: glow 2s ease-in-out infinite;
+  cursor: pointer;
+}
+
+.hsk-btn-wrapper:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+
+
+
+
+
 
 /* Vocabulary Section */
 #vocab-section {
@@ -303,10 +464,10 @@ html {
   box-shadow: 0 0 12px #bd081c;
   transform: scale(1.15);
 }
+.social-btn.tiktok {
+  background-color: #000;
+}
 
-
-
-
-
-
-
+.social-btn.tiktok:hover {
+  background-color: #69c9d0;
+}
