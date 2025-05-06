@@ -1,3 +1,4 @@
+
 const vocabData = {
     1: [
       { word: "爱", pinyin: "ài", meaning: "ស្រឡាញ់", example: "我爱你。", example_kh: "ខ្ញុំស្រលាញ់អ្នក។", example_pinyin: "wǒ ài nǐ." },
@@ -5680,4 +5681,117 @@ const vocabData = {
       display.innerHTML = html;
     });
   });
+  let currentIndex = 0;
+
+  function showWord(index) {
+    const vocab = hsk2VocabList[index];
+    const display = document.getElementById("vocab-display");
+    display.innerHTML = `
+      <h3>${vocab.word}</h3>
+      <p><strong>Pinyin:</strong> ${vocab.pinyin}</p>
+      <p><strong>Khmer:</strong> ${vocab.meaning}</p>
+    `;
+
+    document.getElementById("prev-btn").disabled = index === 0;
+    document.getElementById("next-btn").disabled = index === hsk2VocabList.length - 1;
+  }
+
+  // សកម្មភាពពេលចុច "ថយក្រោយ"
+  document.getElementById("prev-btn").addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+  // សកម្មភាពពេលចុច "បន្តទៅមុខ"
+  document.getElementById("next-btn").addEventListener("click", () => {
+    if (currentIndex < hsk2VocabList.length - 1) {
+      currentIndex++;
+    } else {
+      currentIndex = 0; // ត្រឡប់ទៅដំបូងបើអស់
+    }
+    showWord(currentIndex);
+  });
+
+  // បង្ហាញពាក្យដំបូង
+  showWord(currentIndex);
+
+
+  // បង្ហាញពាក្យទាំងអស់ពី HSK2 ដល់ HSK8
+document.getElementById("next-btn").addEventListener("click", () => {
+  const display = document.getElementById("vocab-display");
+  display.innerHTML = ""; // សម្អាតចាស់
+
+  for (const [level, vocabList] of Object.entries(vocabData)) {
+    const section = document.createElement("div");
+    section.innerHTML = `<h3>📘 ${level.toUpperCase()}</h3>`;
+    vocabList.forEach(vocab => {
+      const item = document.createElement("div");
+      item.innerHTML = `
+        <p><strong>${vocab.word}</strong> (${vocab.pinyin}) — ${vocab.meaning}</p>
+      `;
+      section.appendChild(item);
+    });
+    section.innerHTML += "<hr>";
+    display.appendChild(section);
+  }
+});
+
+// ប៊ូតុង "ថយក្រោយ" => Scroll ទៅលើ
+document.getElementById("prev-btn").addEventListener("click", () => {
+  document.getElementById("vocab-header").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+});
+
+
+
+
+
+
+
+
+studyButtons.forEach(button => {
+  const levelBtn = button.previousElementSibling;
+  const level = levelBtn.getAttribute("data-level");
+
+  button.addEventListener("click", () => {
+    const words = vocabData[level] || [];
+
+    if (words.length === 0) {
+      display.innerHTML = `<p>មិនមានទិន្នន័យសម្រាប់ HSK ថ្នាក់ទី ${level} ទេ។</p>`;
+      return;
+    }
+
+    const html = words.map(item => `
+      <div class="vocab-item">
+        <h3>${item.word} (${item.pinyin})</h3>
+        <p><strong>អត្ថន័យ:</strong> ${item.meaning}</p>
+        <p><strong>ឧទាហរណ៍:</strong> ${item.example}</p>
+        <p><strong>Pinyin:</strong> ${item.example_pinyin}</p>
+        <p><strong>បកប្រែខ្មែរ:</strong> ${item.example_kh}</p>
+      </div>
+    `).join("");
+
+    display.innerHTML = html;
+  });
+});
+
+const hskLevels = ["hsk2", "hsk3", "hsk4", "hsk5", "hsk6", "hsk7", "hsk8"];
+  let currentLevelIndex = 0;
+
+  // ✅ បង្ហាញពាក្យចុងក្រោយ
+  function showCurrentLevel() {
+    const level = hskLevels[currentLevelIndex];
+    const vocabList = vocabData[level];
+
+    display.innerHTML = `<h3>📘 ${level.toUpperCase()}</h3>` + vocabList.map(vocab => `
+      <div>
+        <p><strong>${vocab.word}</strong> (${vocab.pinyin}) — ${vocab.meaning}</p>
+      </div>
+    `).join("");
+  }
+
   

@@ -28,6 +28,23 @@ html {
   to { opacity: 1; }
 }
 
+@keyframes fall {
+  0% { transform: translateY(0); }
+  25% { transform: translateY(15px); }
+  50% { transform: translateY(30px); }
+  75% { transform: translateY(15px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes fall-text {
+  0% { transform: translateY(0); }
+  25% { transform: translateY(15px); }
+  50% { transform: translateY(30px); }
+  75% { transform: translateY(15px); }
+  100% { transform: translateY(0); }
+}
+
+/* Logo */
 .logo {
   width: 100px;
   height: 100px;
@@ -35,46 +52,25 @@ html {
   object-fit: cover;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
-
 .logo:hover {
   transform: scale(1.1) rotate(3deg);
   filter: brightness(1.2) drop-shadow(0 0 6px #ffffffaa);
   cursor: pointer;
 }
+
+/* Title */
 .site-title {
   font-size: 32px;
   color: white;
   font-weight: bold;
   animation: glow 1s ease-in-out infinite;
 }
-
-.book-icon {
-  width: 100px;
-  height: auto;
-  animation: fall 7s ease-in-out infinite;
+.site-title:hover {
+  animation: glow 2s ease-in-out infinite;
+  cursor: pointer;
 }
 
-/* ចលនាធ្លាក់ចុះទៅវិញទៅមក */
-@keyframes fall {
-  0% {
-    transform: translateY(0);
-  }
-  25% {
-    transform: translateY(10px);
-  }
-  50% {
-    transform: translateY(20px);
-  }
-  75% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-
-
+/* Navigation Bar */
 .navbar-top {
   display: flex;
   justify-content: center;
@@ -89,97 +85,58 @@ html {
   padding: 0;
   margin: 0;
 }
-
 .nav-links li {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 10px 0;
 }
-
 .nav-links a {
   color: white;
   text-decoration: none;
   display: flex;
   align-items: center;
-  font-size: 30px; /* Increase the font size */
+  font-size: 30px;
   justify-content: center;
 }
-
-.nav-image {
-  width: 80px; /* Increased image size */
-  height: auto;
-  margin: 0 15px; /* Increase spacing between images and text */
-  animation: fall 7s ease-in-out infinite; /* Apply the continuous falling effect */
+.nav-links a:hover {
+  color: #00ffff;
+  text-decoration: underline;
 }
-
-.left-image {
-  order: -1; /* Moves the left image to the left side */
-}
-
-.right-image {
-  order: 1; /* Keeps the right image on the right side */
-}
-
 .nav-links h1 {
   margin: 0;
-  font-size: 36px; /* Increase the size of the heading */
+  font-size: 36px;
   font-weight: bold;
-  letter-spacing: 2px; /* Add space between letters */
-  animation: fall-text 6s ease-in-out infinite; /* Apply the continuous falling effect */
+  letter-spacing: 2px;
+  animation: fall-text 6s ease-in-out infinite;
+}
+.nav-image {
+  width: 80px;
+  height: auto;
+  margin: 0 15px;
+  animation: fall 7s ease-in-out infinite;
+}
+.left-image {
+  order: -1;
+}
+.right-image {
+  order: 1;
 }
 
-/* Continuous Falling and Returning animation for images */
-@keyframes fall {
-  0% {
-    transform: translateY(0); /* Starting position */
-  }
-  25% {
-    transform: translateY(15px); /* Move slightly down */
-  }
-  50% {
-    transform: translateY(30px); /* Fall further down */
-  }
-  75% {
-    transform: translateY(15px); /* Move slightly up */
-  }
-  100% {
-    transform: translateY(0); /* Return to original position */
-  }
+/* Icon and Book Animation */
+.book-icon {
+  width: 100px;
+  height: auto;
+  animation: fall 7s ease-in-out infinite;
 }
 
-/* Continuous Falling and Returning animation for text */
-@keyframes fall-text {
-  0% {
-    transform: translateY(0); /* Starting position */
-  }
-  25% {
-    transform: translateY(15px); /* Move slightly down */
-  }
-  50% {
-    transform: translateY(30px); /* Fall further down */
-  }
-  75% {
-    transform: translateY(15px); /* Move slightly up */
-  }
-  100% {
-    transform: translateY(0); /* Return to original position */
-  }
-}
-
-
-
-
-
-
-
+/* HSK Container */
 .hsk-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 20px;
   padding: 20px;
 }
-
 .hsk-btn-wrapper {
   display: flex;
   flex-direction: column;
@@ -190,13 +147,11 @@ html {
   animation: fadeInUp 0.6s ease forwards;
   opacity: 0;
 }
-
 .hsk-label {
   display: block;
   margin-top: 8px;
   font-weight: bold;
 }
-
 .hsk-btn,
 .study-btn {
   padding: 8px 12px;
@@ -207,118 +162,6 @@ html {
   border-radius: 6px;
   transition: transform 0.3s ease;
 }
-
-.hsk-btn:hover,
-.study-btn:hover {
-  transform: scale(1.05);
-}
-
-.study-btn {
-  background-color: #007bff;
-  color: white;
-}
-
-.social-links {
-  margin: 20px 0;
-}
-
-.social-btn {
-  margin: 5px;
-  font-size: 24px;
-  color: white;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #333;
-  text-decoration: none;
-  transition: transform 0.3s ease;
-}
-
-.social-btn:hover {
-  transform: scale(1.1);
-}
-
-.vocab-display {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 20px;
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
-  .hsk-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .vocab-display {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  body {
-    font-size: 14px;
-  }
-
-  .site-title {
-    font-size: 20px;
-  }
-
-  .nav-image {
-    width: 60px;
-  }
-
-  .book-icon {
-    width: 70px;
-  }
-
-  .hsk-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    padding: 10px;
-  }
-
-  .vocab-display {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .social-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .logo {
-    width: 60px;
-  }
-
-  .site-title {
-    font-size: 18px;
-  }
-
-  .nav-image {
-    width: 50px;
-  }
-
-  .book-icon {
-    width: 60px;
-  }
-
-  .hsk-btn,
-  .study-btn {
-    font-size: 14px;
-  }
-}
-
-
-
-/* Hover Effects */
 .hsk-btn:hover,
 .study-btn:hover {
   transform: scale(1.05);
@@ -326,35 +169,15 @@ html {
   color: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
-
-.nav-links a:hover {
-  color: #00ffff;
-  text-decoration: underline;
+.study-btn {
+  background-color: #007bff;
+  color: white;
 }
-
-.social-btn:hover {
-  transform: scale(1.1);
-  background-color: #555;
-  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
-}
-
-.site-title:hover {
-  animation: glow 2s ease-in-out infinite;
-  cursor: pointer;
-}
-
 .hsk-btn-wrapper:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transform: translateY(-3px);
   transition: transform 0.3s, box-shadow 0.3s;
 }
-
-
-
-
-
-
-
 
 /* Vocabulary Section */
 #vocab-section {
@@ -370,57 +193,57 @@ html {
 }
 .vocab-display {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
   max-width: 1200px;
   margin: auto;
   text-align: left;
 }
-
 .vocab-item {
   background-color: #f9f9f9;
   padding: 16px;
   border-left: 4px solid #4CAF50;
   border-radius: 8px;
-  min-height: 160px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-
 .vocab-item h3 {
   font-size: clamp(24px, 3vw, 32px);
 }
-
 .vocab-item p {
   font-size: clamp(18px, 2.5vw, 24px);
 }
 
-
-
-
+/* Social Buttons */
 .social-links {
   display: flex;
   justify-content: center;
   gap: 20px;
   margin: 30px 0;
 }
-
 .social-btn {
+  margin: 5px;
   font-size: 24px;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
+  display: inline-flex;
   justify-content: center;
+  align-items: center;
   color: white;
+  background-color: #333;
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.social-btn:hover {
+  transform: scale(1.1);
+  background-color: #555;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
 
-/* Facebook */
+/* Social-specific colors */
 .social-btn.facebook {
   background-color: #3b5998;
 }
@@ -428,8 +251,6 @@ html {
   box-shadow: 0 0 12px #3b5998;
   transform: scale(1.15);
 }
-
-/* YouTube */
 .social-btn.youtube {
   background-color: #ff0000;
 }
@@ -437,8 +258,6 @@ html {
   box-shadow: 0 0 12px #ff0000;
   transform: scale(1.15);
 }
-
-/* Instagram */
 .social-btn.instagram {
   background: radial-gradient(circle at 30% 30%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
 }
@@ -446,8 +265,6 @@ html {
   box-shadow: 0 0 12px #d6249f;
   transform: scale(1.15);
 }
-
-/* Telegram */
 .social-btn.telegram {
   background-color: #0088cc;
 }
@@ -455,8 +272,6 @@ html {
   box-shadow: 0 0 12px #0088cc;
   transform: scale(1.15);
 }
-
-/* Pinterest */
 .social-btn.pinterest {
   background-color: #bd081c;
 }
@@ -467,7 +282,66 @@ html {
 .social-btn.tiktok {
   background-color: #000;
 }
-
 .social-btn.tiktok:hover {
   background-color: #69c9d0;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .hsk-container,
+  .vocab-display {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  .site-title {
+    font-size: 22px;
+  }
+  .nav-image,
+  .book-icon {
+    width: 60px;
+  }
+  .nav-links a {
+    font-size: 20px;
+  }
+  .nav-links h1 {
+    font-size: 24px;
+  }
+  .hsk-btn,
+  .study-btn {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+  .social-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+  .site-title {
+    font-size: 18px;
+  }
+  .nav-image {
+    width: 50px;
+  }
+  .book-icon {
+    width: 60px;
+  }
+  .vocab-display {
+    grid-template-columns: 1fr;
+  }
+  .vocab-item h3 {
+    font-size: 18px;
+  }
+  .vocab-item p {
+    font-size: 16px;
+  }
 }
